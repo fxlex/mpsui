@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/com.github.fxlex.ui.demolang/com.github.fxlex.ui.demolang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/com.github.fxlex.ui/com.github.fxlex.ui.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/com.github.fxlex.ui/com.github.fxlex.ui.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/sandbox/com.github.fxlex.ui.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
