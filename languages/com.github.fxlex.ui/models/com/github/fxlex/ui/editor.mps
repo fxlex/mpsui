@@ -2,11 +2,11 @@
 <model ref="r:73ffa9a0-94fa-48bd-b9ed-09121ef256bb(com.github.fxlex.ui.editor)">
   <persistence version="9" />
   <languages>
-    <use id="bb5de538-6af5-426c-88ce-a2d9bf1d51d1" name="com.github.fxlex.ui" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" />
     <import index="vl93" ref="r:1c8e76de-6bf0-4cf8-b4c7-66f2efb0c883(com.github.fxlex.ui.structure)" implicit="true" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
   </imports>
@@ -21,6 +21,11 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
+        <property id="1186414551515" name="flag" index="VOm3f" />
+      </concept>
+      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" flags="ln" index="VPXOz" />
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
@@ -35,6 +40,9 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
+      <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
+        <child id="1219418656006" name="styleItem" index="3F10Kt" />
+      </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -65,6 +73,31 @@
           <ref role="1NtTu8" to="vl93:1FN4viiPZP1" resolve="identifier" />
         </node>
       </node>
+      <node concept="3F0ifn" id="4ySBHzRPnzL" role="3EZMnx" />
+      <node concept="3F0ifn" id="7JQKKTfm_nW" role="3EZMnx">
+        <property role="3F0ifm" value="Initial Value:" />
+        <ref role="1k5W1q" to="tpc5:hF4yUZ8" resolve="header" />
+      </node>
+      <node concept="3EZMnI" id="7JQKKTfm_I0" role="3EZMnx">
+        <node concept="VPM3Z" id="7JQKKTfm_I2" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="VPXOz" id="7JQKKTfm_M3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="7JQKKTfm_I4" role="3EZMnx">
+          <property role="3F0ifm" value="value" />
+          <ref role="1k5W1q" to="tpc5:hF4H1c8" resolve="property" />
+        </node>
+        <node concept="3F1sOY" id="4ySBHzRPn$T" role="3EZMnx">
+          <ref role="1NtTu8" to="vl93:3ZqNA5Aj2vB" />
+          <node concept="VPXOz" id="4ySBHzRPwxZ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="7JQKKTfm_I5" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="4ySBHzRPn$e" role="3EZMnx" />
       <node concept="3EZMnI" id="1FN4viiQ5Fo" role="3EZMnx">
         <node concept="2iRfu4" id="1FN4viiQ5Fp" role="2iSdaV" />
         <node concept="3F0ifn" id="1FN4viiQ5B4" role="3EZMnx">

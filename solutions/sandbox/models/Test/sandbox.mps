@@ -14,8 +14,8 @@
     </language>
   </registry>
   <node concept="28bXyv" id="yfG9tCeP28">
-    <property role="28bXyo" value="CheckBox 1 is checked" />
-    <property role="28bwDs" value="CheckBox 2 is unchecked" />
+    <property role="28bXyo" value="unchecked" />
+    <property role="28bwDs" value="unchecked" />
   </node>
 </model>
 
