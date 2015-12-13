@@ -91,6 +91,12 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1FN4viiPXnj" resolve="CheckBoxCheckedHandler" />
     </node>
+    <node concept="1TJgyj" id="3ZqNA5Aj2vB" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initValueQuery" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpc2:gCpkWun" resolve="QueryFunction_NodeCondition" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1FN4viiPXnj">
     <property role="1pbfSe" value="1379211321" />

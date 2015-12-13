@@ -14,10 +14,15 @@
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
+      <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
+        <property id="1186414551515" name="flag" index="VOm3f" />
+      </concept>
+      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -29,6 +34,9 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
+      <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
+        <child id="1219418656006" name="styleItem" index="3F10Kt" />
+      </concept>
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -55,8 +63,14 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1146253292180" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" flags="nn" index="3y1jeu">
+        <child id="1146253292181" name="value" index="3y1jev" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -66,6 +80,7 @@
         <property id="1941915606460136769" name="identifier" index="289eMP" />
         <child id="1941915606460134264" name="uncheckedHandler" index="289eac" />
         <child id="1941915606460134809" name="checkedHandler" index="289ehH" />
+        <child id="4601216887035799527" name="initValueQuery" index="1p_IA6" />
       </concept>
       <concept id="1941915606460126675" name="com.github.fxlex.ui.structure.CheckBoxCheckedHandler" flags="ig" index="289cgB" />
       <concept id="1941915606460127162" name="com.github.fxlex.ui.structure.CheckBoxUncheckedHandler" flags="ig" index="289cpe" />
@@ -86,7 +101,7 @@
               <node concept="3clFbF" id="yfG9tCeRZ6" role="3cqZAp">
                 <node concept="37vLTI" id="yfG9tCeRZ7" role="3clFbG">
                   <node concept="Xl_RD" id="yfG9tCeRZ8" role="37vLTx">
-                    <property role="Xl_RC" value="CheckBox 1 is unchecked" />
+                    <property role="Xl_RC" value="unchecked" />
                   </node>
                   <node concept="2OqwBi" id="yfG9tCeRZ9" role="37vLTJ">
                     <node concept="pncrf" id="yfG9tCeRZa" role="2Oq$k0" />
@@ -103,12 +118,31 @@
               <node concept="3clFbF" id="yfG9tCeRKJ" role="3cqZAp">
                 <node concept="37vLTI" id="yfG9tCeRU4" role="3clFbG">
                   <node concept="Xl_RD" id="yfG9tCeRUS" role="37vLTx">
-                    <property role="Xl_RC" value="CheckBox 1 is checked" />
+                    <property role="Xl_RC" value="checked" />
                   </node>
                   <node concept="2OqwBi" id="yfG9tCeRLW" role="37vLTJ">
                     <node concept="pncrf" id="yfG9tCeRKI" role="2Oq$k0" />
                     <node concept="3TrcHB" id="yfG9tCeROX" role="2OqNvi">
                       <ref role="3TsBF5" to="ak0r:1FN4viiRc_G" resolve="text1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="pkWqt" id="4ySBHzRPvhU" role="1p_IA6">
+            <node concept="3clFbS" id="4ySBHzRPvhV" role="2VODD2">
+              <node concept="3cpWs6" id="4ySBHzRPvj3" role="3cqZAp">
+                <node concept="2OqwBi" id="4ySBHzRPyhw" role="3cqZAk">
+                  <node concept="2OqwBi" id="4ySBHzRPy7D" role="2Oq$k0">
+                    <node concept="pncrf" id="4ySBHzRPy5s" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="4ySBHzRPybD" role="2OqNvi">
+                      <ref role="3TsBF5" to="ak0r:1FN4viiRc_G" resolve="text1" />
+                    </node>
+                  </node>
+                  <node concept="3y1jeu" id="4ySBHzRPyut" role="2OqNvi">
+                    <node concept="Xl_RD" id="4ySBHzRPywn" role="3y1jev">
+                      <property role="Xl_RC" value="checked" />
                     </node>
                   </node>
                 </node>
@@ -129,7 +163,7 @@
               <node concept="3clFbF" id="yfG9tCeS3n" role="3cqZAp">
                 <node concept="37vLTI" id="yfG9tCeS3o" role="3clFbG">
                   <node concept="Xl_RD" id="yfG9tCeS3p" role="37vLTx">
-                    <property role="Xl_RC" value="CheckBox 2 is unchecked" />
+                    <property role="Xl_RC" value="unchecked" />
                   </node>
                   <node concept="2OqwBi" id="yfG9tCeS3q" role="37vLTJ">
                     <node concept="pncrf" id="yfG9tCeS3r" role="2Oq$k0" />
@@ -146,7 +180,7 @@
               <node concept="3clFbF" id="yfG9tCeS1M" role="3cqZAp">
                 <node concept="37vLTI" id="yfG9tCeS1N" role="3clFbG">
                   <node concept="Xl_RD" id="yfG9tCeS1O" role="37vLTx">
-                    <property role="Xl_RC" value="CheckBox 2 is checked" />
+                    <property role="Xl_RC" value="checked" />
                   </node>
                   <node concept="2OqwBi" id="yfG9tCeS1P" role="37vLTJ">
                     <node concept="pncrf" id="yfG9tCeS1Q" role="2Oq$k0" />
@@ -158,14 +192,51 @@
               </node>
             </node>
           </node>
+          <node concept="pkWqt" id="4ySBHzRPwft" role="1p_IA6">
+            <node concept="3clFbS" id="4ySBHzRPwfu" role="2VODD2">
+              <node concept="3cpWs6" id="4ySBHzRPzzO" role="3cqZAp">
+                <node concept="2OqwBi" id="4ySBHzRPzT5" role="3cqZAk">
+                  <node concept="2OqwBi" id="4ySBHzRPzBJ" role="2Oq$k0">
+                    <node concept="pncrf" id="4ySBHzRPz_y" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="4ySBHzRPzNe" role="2OqNvi">
+                      <ref role="3TsBF5" to="ak0r:1FN4viiRhIC" resolve="text2" />
+                    </node>
+                  </node>
+                  <node concept="3y1jeu" id="4ySBHzRP$62" role="2OqNvi">
+                    <node concept="Xl_RD" id="4ySBHzRP$7W" role="3y1jev">
+                      <property role="Xl_RC" value="checked" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="2iRkQZ" id="1FN4viiRhCn" role="2iSdaV" />
-      <node concept="3F0A7n" id="1FN4viiRhCj" role="3EZMnx">
-        <ref role="1NtTu8" to="ak0r:1FN4viiRc_G" resolve="text1" />
+      <node concept="3EZMnI" id="4ySBHzRPvS0" role="3EZMnx">
+        <node concept="VPM3Z" id="4ySBHzRPvS2" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="4ySBHzRPvS4" role="3EZMnx">
+          <property role="3F0ifm" value="Checkbox 1 is:" />
+        </node>
+        <node concept="3F0A7n" id="4ySBHzRPvXJ" role="3EZMnx">
+          <ref role="1NtTu8" to="ak0r:1FN4viiRc_G" resolve="text1" />
+        </node>
+        <node concept="2iRfu4" id="4ySBHzRPvS5" role="2iSdaV" />
       </node>
-      <node concept="3F0A7n" id="1FN4viiRi7x" role="3EZMnx">
-        <ref role="1NtTu8" to="ak0r:1FN4viiRhIC" resolve="text2" />
+      <node concept="3EZMnI" id="4ySBHzRPw8S" role="3EZMnx">
+        <node concept="VPM3Z" id="4ySBHzRPw8T" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="4ySBHzRPw8U" role="3EZMnx">
+          <property role="3F0ifm" value="Checkbox 2 is:" />
+        </node>
+        <node concept="3F0A7n" id="4ySBHzRPw8V" role="3EZMnx">
+          <ref role="1NtTu8" to="ak0r:1FN4viiRhIC" resolve="text2" />
+        </node>
+        <node concept="2iRfu4" id="4ySBHzRPw8W" role="2iSdaV" />
       </node>
     </node>
   </node>
